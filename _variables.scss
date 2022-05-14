@@ -1,0 +1,29 @@
+@use "colors";
+
+:root {
+  color-scheme: light;
+
+  --color-bg: #{colors.$background-light};
+  --color-fg: #{colors.$foreground-light};
+  --color-divider: #{colors.$divider-light};
+  --color-primary: #{colors.$primary-light};
+  --color-primary-contrast: #{colors.$primary-light-contrast};
+  --color-accent: #{colors.$accent-light};
+  --color-accent-contrast: #{colors.$accent-light-contrast};
+  --color-warn: #{colors.$warn-dark};
+  --color-warn-contrast: #{colors.$warn-dark-contrast};
+
+  @media screen and (prefers-color-scheme: dark) {
+    color-scheme: dark;
+
+    --color-bg: #{colors.$background-dark};
+    --color-fg: #{colors.$foreground-dark};
+    --color-divider: #{colors.$divider-dark};
+    --color-primary: #{colors.$primary-dark};
+    --color-primary-contrast: #{colors.$primary-dark-contrast};
+    --color-accent: #{colors.$accent-dark};
+    --color-accent-contrast: #{colors.$accent-dark-contrast};
+    --color-warn: #{colors.$warn-dark};
+    --color-warn-contrast: #{colors.$warn-dark-contrast};
+  }
+}
