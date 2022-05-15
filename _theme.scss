@@ -8,25 +8,25 @@
 // Include the common styles for Angular Material. We include this here so that you only
 // have to load a single css file for Angular Material in your app.
 // Be sure that you only ever include this mixin once!
-@include mat.core(type.$notebook-typography);
+@include mat.core(type.$app-typography);
 
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$notebook-primary: colors.$palette-primary-light;
-$notebook-accent: colors.$palette-accent-light;
+$app-primary: colors.$palette-primary-light;
+$app-accent: colors.$palette-accent-light;
 
 // The warn palette is optional (defaults to red).
-$notebook-warn: colors.$palette-warn-light;
+$app-warn: colors.$palette-warn-light;
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
-$notebook-theme: mat.define-light-theme(
+$app-theme: mat.define-light-theme(
   (
     color: (
-      primary: $notebook-primary,
-      accent: $notebook-accent,
-      warn: $notebook-warn,
+      primary: $app-primary,
+      accent: $app-accent,
+      warn: $app-warn,
     ),
   )
 );
@@ -34,23 +34,23 @@ $notebook-theme: mat.define-light-theme(
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
-@include mat.all-component-themes($notebook-theme);
+@include mat.all-component-themes($app-theme);
 
 // Create dark theme
 @media screen and (prefers-color-scheme: dark) {
-  $notebook-primary-dark: colors.$palette-primary-dark;
-  $notebook-accent-dark: colors.$palette-accent-dark;
-  $notebook-warn-dark: colors.$palette-warn-dark;
+  $app-primary-dark: colors.$palette-primary-dark;
+  $app-accent-dark: colors.$palette-accent-dark;
+  $app-warn-dark: colors.$palette-warn-dark;
 
-  $notebook-theme-dark: mat.define-dark-theme(
+  $app-theme-dark: mat.define-dark-theme(
     (
       color: (
-        primary: $notebook-primary-dark,
-        accent: $notebook-accent-dark,
-        warn: $notebook-warn-dark,
+        primary: $app-primary-dark,
+        accent: $app-accent-dark,
+        warn: $app-warn-dark,
       ),
     )
   );
 
-  @include mat.all-component-colors($notebook-theme-dark);
+  @include mat.all-component-colors($app-theme-dark);
 }

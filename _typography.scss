@@ -5,7 +5,7 @@ $font-family-body: Roboto, "Helvetica Neue", sans-serif;
 $font-family-heading: $font-family-body;
 
 // Define custom typography config (size, line-height, weight, font-family, letter-spacing)
-$notebook-typography: mat.define-typography-config(
+$app-typography: mat.define-typography-config(
   $body-1: mat.define-typography-level(1rem, 1.5, 400, $font-family-body),
   $body-2: mat.define-typography-level(1rem, 1.5, 500, $font-family-body),
   $subheading-1:
