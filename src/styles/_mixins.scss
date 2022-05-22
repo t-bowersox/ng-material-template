@@ -1,0 +1,12 @@
+// Values from node_modules/@angular/material/toolbar/_toolbar-variables.scss
+@mixin mat-toolbar-height {
+  $height-desktop: 64px;
+  $height-mobile: 56px;
+  $mobile-breakpoint: "max-width: 599px";
+
+  padding-top: $height-desktop;
+
+  @media ($mobile-breakpoint) {
+    padding-top: $height-mobile;
+  }
+}
