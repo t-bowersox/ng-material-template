@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "@angular/material": "^13.3.8"
+  },
+  "devDependencies": {
+    "prettier": "^2.6.2"
+  }
+}
