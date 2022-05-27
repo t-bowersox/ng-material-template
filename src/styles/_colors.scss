@@ -10,21 +10,21 @@ $primary-light-hue-default: 500;
 $primary-light-hue-light: 400;
 $primary-light-hue-dark: 600;
 
-$primary-dark-hue-default: 200;
-$primary-dark-hue-light: 100;
-$primary-dark-hue-dark: 400;
-
 $accent-light-hue-default: 800;
 $accent-light-hue-light: 600;
 $accent-light-hue-dark: 900;
 
-$accent-dark-hue-default: 200;
-$accent-dark-hue-light: 100;
-$accent-dark-hue-dark: 400;
-
 $warn-light-hue-default: 800;
 $warn-light-hue-light: 700;
 $warn-light-hue-dark: 900;
+
+$primary-dark-hue-default: 200;
+$primary-dark-hue-light: 100;
+$primary-dark-hue-dark: 400;
+
+$accent-dark-hue-default: 200;
+$accent-dark-hue-light: 100;
+$accent-dark-hue-dark: 400;
 
 $warn-dark-hue-default: 100;
 $warn-dark-hue-light: 50;
@@ -38,24 +38,12 @@ $palette-primary-light: mat.define-palette(
   $primary-light-hue-light,
   $primary-light-hue-dark
 );
-$palette-primary-dark: mat.define-palette(
-  $primary,
-  $primary-dark-hue-default,
-  $primary-dark-hue-light,
-  $primary-dark-hue-dark
-);
 
 $palette-accent-light: mat.define-palette(
   $accent,
   $accent-light-hue-default,
   $accent-light-hue-light,
   $accent-light-hue-dark
-);
-$palette-accent-dark: mat.define-palette(
-  $accent,
-  $accent-dark-hue-default,
-  $accent-dark-hue-light,
-  $accent-dark-hue-dark
 );
 
 $palette-warn-light: mat.define-palette(
@@ -64,6 +52,21 @@ $palette-warn-light: mat.define-palette(
   $warn-light-hue-light,
   $warn-light-hue-dark
 );
+
+$palette-primary-dark: mat.define-palette(
+  $primary,
+  $primary-dark-hue-default,
+  $primary-dark-hue-light,
+  $primary-dark-hue-dark
+);
+
+$palette-accent-dark: mat.define-palette(
+  $accent,
+  $accent-dark-hue-default,
+  $accent-dark-hue-light,
+  $accent-dark-hue-dark
+);
+
 $palette-warn-dark: mat.define-palette(
   $warn,
   $warn-dark-hue-default,
@@ -73,9 +76,9 @@ $palette-warn-dark: mat.define-palette(
 
 // Get Angular Material foreground & background palettes
 $palette-foreground-light: mat.$light-theme-foreground-palette;
-$palette-foreground-dark: mat.$dark-theme-foreground-palette;
-
 $palette-background-light: mat.$light-theme-background-palette;
+
+$palette-foreground-dark: mat.$dark-theme-foreground-palette;
 $palette-background-dark: mat.$dark-theme-background-palette;
 
 // Define primary colors
@@ -96,12 +99,12 @@ $foreground-dark: mat.get-color-from-palette($palette-foreground-dark, base);
 
 // Primary
 $primary-light: mat.get-color-from-palette($palette-primary-light);
-$primary-dark: mat.get-color-from-palette($palette-primary-dark);
-
 $primary-light-contrast: mat.get-contrast-color-from-palette(
   $palette-primary-light,
   $primary-light-hue-default
 );
+
+$primary-dark: mat.get-color-from-palette($palette-primary-dark);
 $primary-dark-contrast: mat.get-contrast-color-from-palette(
   $palette-primary-dark,
   $primary-dark-hue-default
@@ -109,12 +112,12 @@ $primary-dark-contrast: mat.get-contrast-color-from-palette(
 
 // Accent
 $accent-light: mat.get-color-from-palette($palette-accent-light);
-$accent-dark: mat.get-color-from-palette($palette-accent-dark);
-
 $accent-light-contrast: mat.get-contrast-color-from-palette(
   $palette-accent-light,
   $accent-light-hue-default
 );
+
+$accent-dark: mat.get-color-from-palette($palette-accent-dark);
 $accent-dark-contrast: mat.get-contrast-color-from-palette(
   $palette-accent-dark,
   $accent-dark-hue-default
@@ -122,12 +125,12 @@ $accent-dark-contrast: mat.get-contrast-color-from-palette(
 
 // Warn
 $warn-light: mat.get-color-from-palette($palette-warn-light);
-$warn-dark: mat.get-color-from-palette($palette-warn-dark);
-
 $warn-light-contrast: mat.get-contrast-color-from-palette(
   $palette-warn-light,
   $warn-light-hue-default
 );
+
+$warn-dark: mat.get-color-from-palette($palette-warn-dark);
 $warn-dark-contrast: mat.get-contrast-color-from-palette(
   $palette-warn-dark,
   $warn-dark-hue-default
