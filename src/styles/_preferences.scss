@@ -1,0 +1,63 @@
+@use "@angular/material" as mat;
+
+/*
+  STEP 1.
+  Define the primary, accent, and warn palettes you want to use.
+  See: https://material.angular.io/guide/theming#predefined-palettes
+  Or create your own: https://material.angular.io/guide/theming#create-your-own-palette
+ */
+
+$primary: mat.$deep-purple-palette;
+$accent: mat.$light-blue-palette;
+$warn: mat.$red-palette;
+
+/*
+  STEP 2.
+  Define the hues (default, light, & dark) to use for each palette's
+  light & dark theme. For colors used as text, keep accessibility in mind:
+  adjust each hue to maintain a minimum of WCAG 2.0 AA contrast ratios.
+ */
+
+/*
+  Light theme
+ */
+
+$light-primary-default: 500; // Used for <a> element color
+$light-primary-light: 400;
+$light-primary-dark: 600;
+
+$light-accent-default: 800;
+$light-accent-light: 600;
+$light-accent-dark: 900;
+
+$light-warn-default: 800;
+$light-warn-light: 700;
+$light-warn-dark: 900;
+
+/*
+  Dark theme
+ */
+
+$dark-primary-default: 200; // Used for <a> element color
+$dark-primary-light: 100;
+$dark-primary-dark: 400;
+
+$dark-accent-default: 200;
+$dark-accent-light: 100;
+$dark-accent-dark: 400;
+
+$dark-warn-default: 100;
+$dark-warn-light: 50;
+$dark-warn-dark: A100;
+
+/*
+  STEP 3.
+  Define the font families you want to use to customize the theme's
+  typography.
+ */
+
+$font-family-body: Roboto, "Helvetica Neue", sans-serif;
+$font-family-heading: $font-family-body;
+
+// Not used in Angular Material theme, but made available as custom property.
+$font-family-pre: monospace;

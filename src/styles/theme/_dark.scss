@@ -1,0 +1,251 @@
+@use "@angular/material" as mat;
+@use "../preferences" as prefs;
+
+/*
+  Define the Angular Material theme palettes (palette, default, light, dark)
+ */
+
+$palette-primary: mat.define-palette(
+  prefs.$primary,
+  prefs.$dark-primary-default,
+  prefs.$dark-primary-light,
+  prefs.$dark-primary-dark
+);
+
+$palette-accent: mat.define-palette(
+  prefs.$accent,
+  prefs.$dark-accent-default,
+  prefs.$dark-accent-light,
+  prefs.$dark-accent-dark
+);
+
+$palette-warn: mat.define-palette(
+  prefs.$warn,
+  prefs.$dark-warn-default,
+  prefs.$dark-warn-light,
+  prefs.$dark-warn-dark
+);
+
+/*
+  Define the Angular Material foreground & background palettes
+ */
+
+$palette-foreground: mat.$dark-theme-foreground-palette;
+$palette-background: mat.$dark-theme-background-palette;
+
+/*
+  Extract dark theme color variables
+ */
+$background: mat.get-color-from-palette($palette-background, background);
+$foreground: mat.get-color-from-palette($palette-foreground, base);
+$divider: mat.get-color-from-palette($palette-foreground, divider);
+
+// Primary hues
+
+$primary-default: mat.get-color-from-palette($palette-primary);
+$primary-default-contrast: mat.get-contrast-color-from-palette(
+  $palette-primary,
+  prefs.$dark-primary-default
+);
+
+$primary-light: mat.get-color-from-palette($palette-primary);
+$primary-light-contrast: mat.get-contrast-color-from-palette(
+  $palette-primary,
+  prefs.$dark-primary-light
+);
+
+$primary-dark: mat.get-color-from-palette($palette-primary);
+$primary-dark-contrast: mat.get-contrast-color-from-palette(
+  $palette-primary,
+  prefs.$dark-primary-dark
+);
+
+// Accent hues
+
+$accent-default: mat.get-color-from-palette($palette-accent);
+$accent-default-contrast: mat.get-contrast-color-from-palette(
+  $palette-accent,
+  prefs.$dark-accent-default
+);
+
+$accent-light: mat.get-color-from-palette($palette-accent);
+$accent-light-contrast: mat.get-contrast-color-from-palette(
+  $palette-accent,
+  prefs.$dark-accent-light
+);
+
+$accent-dark: mat.get-color-from-palette($palette-accent);
+$accent-dark-contrast: mat.get-contrast-color-from-palette(
+  $palette-accent,
+  prefs.$dark-accent-dark
+);
+
+// Warn hues
+
+$warn-default: mat.get-color-from-palette($palette-warn);
+$warn-default-contrast: mat.get-contrast-color-from-palette(
+  $palette-warn,
+  prefs.$dark-warn-default
+);
+
+$warn-light: mat.get-color-from-palette($palette-warn);
+$warn-light-contrast: mat.get-contrast-color-from-palette(
+  $palette-warn,
+  prefs.$dark-warn-light
+);
+
+$warn-dark: mat.get-color-from-palette($palette-warn);
+$warn-dark-contrast: mat.get-contrast-color-from-palette(
+  $palette-warn,
+  prefs.$dark-warn-dark
+);
+
+// Define color primatives
+
+// Primary dark
+$primary-50: mat.get-color-from-palette($palette-primary, 50);
+$primary-100: mat.get-color-from-palette($palette-primary, 100);
+$primary-200: mat.get-color-from-palette($palette-primary, 200);
+$primary-300: mat.get-color-from-palette($palette-primary, 300);
+$primary-400: mat.get-color-from-palette($palette-primary, 400);
+$primary-500: mat.get-color-from-palette($palette-primary, 500);
+$primary-600: mat.get-color-from-palette($palette-primary, 600);
+$primary-700: mat.get-color-from-palette($palette-primary, 700);
+$primary-800: mat.get-color-from-palette($palette-primary, 800);
+$primary-900: mat.get-color-from-palette($palette-primary, 900);
+$primary-A100: mat.get-color-from-palette($palette-primary, "A100");
+$primary-A200: mat.get-color-from-palette($palette-primary, "A200");
+$primary-A400: mat.get-color-from-palette($palette-primary, "A400");
+$primary-A700: mat.get-color-from-palette($palette-primary, "A700");
+
+$primary-50-contrast: mat.get-contrast-color-from-palette($palette-primary, 50);
+$primary-100-contrast: mat.get-contrast-color-from-palette(
+  $palette-primary,
+  100
+);
+$primary-200-contrast: mat.get-contrast-color-from-palette(
+  $palette-primary,
+  200
+);
+$primary-300-contrast: mat.get-contrast-color-from-palette(
+  $palette-primary,
+  300
+);
+$primary-400-contrast: mat.get-contrast-color-from-palette(
+  $palette-primary,
+  400
+);
+$primary-500-contrast: mat.get-contrast-color-from-palette(
+  $palette-primary,
+  500
+);
+$primary-600-contrast: mat.get-contrast-color-from-palette(
+  $palette-primary,
+  600
+);
+$primary-700-contrast: mat.get-contrast-color-from-palette(
+  $palette-primary,
+  700
+);
+$primary-800-contrast: mat.get-contrast-color-from-palette(
+  $palette-primary,
+  800
+);
+$primary-900-contrast: mat.get-contrast-color-from-palette(
+  $palette-primary,
+  900
+);
+$primary-A100-contrast: mat.get-contrast-color-from-palette(
+  $palette-primary,
+  "A100"
+);
+$primary-A200-contrast: mat.get-contrast-color-from-palette(
+  $palette-primary,
+  "A200"
+);
+$primary-A400-contrast: mat.get-contrast-color-from-palette(
+  $palette-primary,
+  "A400"
+);
+$primary-A700-contrast: mat.get-contrast-color-from-palette(
+  $palette-primary,
+  "A700"
+);
+
+/*
+  Extract color primatives.
+ */
+
+// Accent dark
+$accent-50: mat.get-color-from-palette($palette-accent, 50);
+$accent-100: mat.get-color-from-palette($palette-accent, 100);
+$accent-200: mat.get-color-from-palette($palette-accent, 200);
+$accent-300: mat.get-color-from-palette($palette-accent, 300);
+$accent-400: mat.get-color-from-palette($palette-accent, 400);
+$accent-500: mat.get-color-from-palette($palette-accent, 500);
+$accent-600: mat.get-color-from-palette($palette-accent, 600);
+$accent-700: mat.get-color-from-palette($palette-accent, 700);
+$accent-800: mat.get-color-from-palette($palette-accent, 800);
+$accent-900: mat.get-color-from-palette($palette-accent, 900);
+$accent-A100: mat.get-color-from-palette($palette-accent, "A100");
+$accent-A200: mat.get-color-from-palette($palette-accent, "A200");
+$accent-A400: mat.get-color-from-palette($palette-accent, "A400");
+$accent-A700: mat.get-color-from-palette($palette-accent, "A700");
+
+$accent-50-contrast: mat.get-contrast-color-from-palette($palette-accent, 50);
+$accent-100-contrast: mat.get-contrast-color-from-palette($palette-accent, 100);
+$accent-200-contrast: mat.get-contrast-color-from-palette($palette-accent, 200);
+$accent-300-contrast: mat.get-contrast-color-from-palette($palette-accent, 300);
+$accent-400-contrast: mat.get-contrast-color-from-palette($palette-accent, 400);
+$accent-500-contrast: mat.get-contrast-color-from-palette($palette-accent, 500);
+$accent-600-contrast: mat.get-contrast-color-from-palette($palette-accent, 600);
+$accent-700-contrast: mat.get-contrast-color-from-palette($palette-accent, 700);
+$accent-800-contrast: mat.get-contrast-color-from-palette($palette-accent, 800);
+$accent-900-contrast: mat.get-contrast-color-from-palette($palette-accent, 900);
+$accent-A100-contrast: mat.get-contrast-color-from-palette(
+  $palette-accent,
+  "A100"
+);
+$accent-A200-contrast: mat.get-contrast-color-from-palette(
+  $palette-accent,
+  "A200"
+);
+$accent-A400-contrast: mat.get-contrast-color-from-palette(
+  $palette-accent,
+  "A400"
+);
+$accent-A700-contrast: mat.get-contrast-color-from-palette(
+  $palette-accent,
+  "A700"
+);
+
+// Warn dark
+$warn-50: mat.get-color-from-palette($palette-warn, 50);
+$warn-100: mat.get-color-from-palette($palette-warn, 100);
+$warn-200: mat.get-color-from-palette($palette-warn, 200);
+$warn-300: mat.get-color-from-palette($palette-warn, 300);
+$warn-400: mat.get-color-from-palette($palette-warn, 400);
+$warn-500: mat.get-color-from-palette($palette-warn, 500);
+$warn-600: mat.get-color-from-palette($palette-warn, 600);
+$warn-700: mat.get-color-from-palette($palette-warn, 700);
+$warn-800: mat.get-color-from-palette($palette-warn, 800);
+$warn-900: mat.get-color-from-palette($palette-warn, 900);
+$warn-A100: mat.get-color-from-palette($palette-warn, "A100");
+$warn-A200: mat.get-color-from-palette($palette-warn, "A200");
+$warn-A400: mat.get-color-from-palette($palette-warn, "A400");
+$warn-A700: mat.get-color-from-palette($palette-warn, "A700");
+
+$warn-50-contrast: mat.get-contrast-color-from-palette($palette-warn, 50);
+$warn-100-contrast: mat.get-contrast-color-from-palette($palette-warn, 100);
+$warn-200-contrast: mat.get-contrast-color-from-palette($palette-warn, 200);
+$warn-300-contrast: mat.get-contrast-color-from-palette($palette-warn, 300);
+$warn-400-contrast: mat.get-contrast-color-from-palette($palette-warn, 400);
+$warn-500-contrast: mat.get-contrast-color-from-palette($palette-warn, 500);
+$warn-600-contrast: mat.get-contrast-color-from-palette($palette-warn, 600);
+$warn-700-contrast: mat.get-contrast-color-from-palette($palette-warn, 700);
+$warn-800-contrast: mat.get-contrast-color-from-palette($palette-warn, 800);
+$warn-900-contrast: mat.get-contrast-color-from-palette($palette-warn, 900);
+$warn-A100-contrast: mat.get-contrast-color-from-palette($palette-warn, "A100");
+$warn-A200-contrast: mat.get-contrast-color-from-palette($palette-warn, "A200");
+$warn-A400-contrast: mat.get-contrast-color-from-palette($palette-warn, "A400");
+$warn-A700-contrast: mat.get-contrast-color-from-palette($palette-warn, "A700");

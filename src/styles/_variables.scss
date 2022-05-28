@@ -1,27 +1,266 @@
-@use "colors";
+@use "preferences" as prefs; // Your chosen palettes, hues, and font families
+@use "theme/light"; // Light theme variables generated from your preferences
+@use "theme/dark"; // Dark theme variables generated from your preferences
 
 :root {
+  //noinspection CssUnknownProperty (for JetBrains IDEs) -- color-scheme is valid
   color-scheme: light dark;
 
-  --color-bg: #{colors.$background-light};
-  --color-fg: #{colors.$foreground-light};
-  --color-divider: #{colors.$divider-light};
-  --color-primary: #{colors.$primary-light};
-  --color-primary-contrast: #{colors.$primary-light-contrast};
-  --color-accent: #{colors.$accent-light};
-  --color-accent-contrast: #{colors.$accent-light-contrast};
-  --color-warn: #{colors.$warn-dark};
-  --color-warn-contrast: #{colors.$warn-dark-contrast};
+  // Theme typography
+
+  --font-family-body: #{prefs.$font-family-body};
+  --font-family-heading: #{prefs.$font-family-heading};
+  --font-family-pre: #{prefs.$font-family-pre};
+
+  // Theme colors: good for most things
+
+  --theme-bg: #{light.$background};
+  --theme-fg: #{light.$foreground};
+  --theme-divider: #{light.$divider};
+
+  --theme-primary-default: #{light.$primary-default};
+  --theme-primary-default-contrast: #{light.$primary-default-contrast};
+
+  --theme-primary-light: #{light.$primary-light};
+  --theme-primary-light-contrast: #{light.$primary-light-contrast};
+
+  --theme-primary-dark: #{light.$primary-dark};
+  --theme-primary-dark-contrast: #{light.$primary-dark-contrast};
+
+  --theme-accent-default: #{light.$accent-default};
+  --theme-accent-default-contrast: #{light.$accent-default-contrast};
+
+  --theme-accent-light: #{light.$accent-light};
+  --theme-accent-light-contrast: #{light.$accent-light-contrast};
+
+  --theme-accent-dark: #{light.$accent-dark};
+  --theme-accent-dark-contrast: #{light.$accent-dark-contrast};
+
+  --theme-warn-default: #{light.$warn-default};
+  --theme-warn-default-contrast: #{light.$warn-default-contrast};
+
+  --theme-warn-light: #{light.$warn-light};
+  --theme-warn-light-contrast: #{light.$warn-light-contrast};
+
+  --theme-warn-dark: #{light.$warn-dark};
+  --theme-warn-dark-contrast: #{light.$warn-dark-contrast};
+
+  // Color primatives: when more nuance is needed
+
+  --color-primary-50: #{light.$primary-50};
+  --color-primary-100: #{light.$primary-100};
+  --color-primary-200: #{light.$primary-200};
+  --color-primary-300: #{light.$primary-300};
+  --color-primary-400: #{light.$primary-400};
+  --color-primary-500: #{light.$primary-500};
+  --color-primary-600: #{light.$primary-600};
+  --color-primary-700: #{light.$primary-700};
+  --color-primary-800: #{light.$primary-800};
+  --color-primary-900: #{light.$primary-900};
+  --color-primary-A100: #{light.$primary-A100};
+  --color-primary-A200: #{light.$primary-A200};
+  --color-primary-A400: #{light.$primary-A400};
+  --color-primary-A700: #{light.$primary-A700};
+
+  --color-primary-50-contrast: #{light.$primary-50-contrast};
+  --color-primary-100-contrast: #{light.$primary-100-contrast};
+  --color-primary-200-contrast: #{light.$primary-200-contrast};
+  --color-primary-300-contrast: #{light.$primary-300-contrast};
+  --color-primary-400-contrast: #{light.$primary-400-contrast};
+  --color-primary-500-contrast: #{light.$primary-500-contrast};
+  --color-primary-600-contrast: #{light.$primary-600-contrast};
+  --color-primary-700-contrast: #{light.$primary-700-contrast};
+  --color-primary-800-contrast: #{light.$primary-800-contrast};
+  --color-primary-900-contrast: #{light.$primary-900-contrast};
+  --color-primary-A100-contrast: #{light.$primary-A100-contrast};
+  --color-primary-A200-contrast: #{light.$primary-A200-contrast};
+  --color-primary-A400-contrast: #{light.$primary-A400-contrast};
+  --color-primary-A700-contrast: #{light.$primary-A700-contrast};
+
+  --color-accent-50: #{light.$accent-50};
+  --color-accent-100: #{light.$accent-100};
+  --color-accent-200: #{light.$accent-200};
+  --color-accent-300: #{light.$accent-300};
+  --color-accent-400: #{light.$accent-400};
+  --color-accent-500: #{light.$accent-500};
+  --color-accent-600: #{light.$accent-600};
+  --color-accent-700: #{light.$accent-700};
+  --color-accent-800: #{light.$accent-800};
+  --color-accent-900: #{light.$accent-900};
+  --color-accent-A100: #{light.$accent-A100};
+  --color-accent-A200: #{light.$accent-A200};
+  --color-accent-A400: #{light.$accent-A400};
+  --color-accent-A700: #{light.$accent-A700};
+
+  --color-accent-50-contrast: #{light.$accent-50-contrast};
+  --color-accent-100-contrast: #{light.$accent-100-contrast};
+  --color-accent-200-contrast: #{light.$accent-200-contrast};
+  --color-accent-300-contrast: #{light.$accent-300-contrast};
+  --color-accent-400-contrast: #{light.$accent-400-contrast};
+  --color-accent-500-contrast: #{light.$accent-500-contrast};
+  --color-accent-600-contrast: #{light.$accent-600-contrast};
+  --color-accent-700-contrast: #{light.$accent-700-contrast};
+  --color-accent-800-contrast: #{light.$accent-800-contrast};
+  --color-accent-900-contrast: #{light.$accent-900-contrast};
+  --color-accent-A100-contrast: #{light.$accent-A100-contrast};
+  --color-accent-A200-contrast: #{light.$accent-A200-contrast};
+  --color-accent-A400-contrast: #{light.$accent-A400-contrast};
+  --color-accent-A700-contrast: #{light.$accent-A700-contrast};
+
+  --color-warn-50: #{light.$warn-50};
+  --color-warn-100: #{light.$warn-100};
+  --color-warn-200: #{light.$warn-200};
+  --color-warn-300: #{light.$warn-300};
+  --color-warn-400: #{light.$warn-400};
+  --color-warn-500: #{light.$warn-500};
+  --color-warn-600: #{light.$warn-600};
+  --color-warn-700: #{light.$warn-700};
+  --color-warn-800: #{light.$warn-800};
+  --color-warn-900: #{light.$warn-900};
+  --color-warn-A100: #{light.$warn-A100};
+  --color-warn-A200: #{light.$warn-A200};
+  --color-warn-A400: #{light.$warn-A400};
+  --color-warn-A700: #{light.$warn-A700};
+
+  --color-warn-50-contrast: #{light.$warn-50-contrast};
+  --color-warn-100-contrast: #{light.$warn-100-contrast};
+  --color-warn-200-contrast: #{light.$warn-200-contrast};
+  --color-warn-300-contrast: #{light.$warn-300-contrast};
+  --color-warn-400-contrast: #{light.$warn-400-contrast};
+  --color-warn-500-contrast: #{light.$warn-500-contrast};
+  --color-warn-600-contrast: #{light.$warn-600-contrast};
+  --color-warn-700-contrast: #{light.$warn-700-contrast};
+  --color-warn-800-contrast: #{light.$warn-800-contrast};
+  --color-warn-900-contrast: #{light.$warn-900-contrast};
+  --color-warn-A100-contrast: #{light.$warn-A100-contrast};
+  --color-warn-A200-contrast: #{light.$warn-A200-contrast};
+  --color-warn-A400-contrast: #{light.$warn-A400-contrast};
+  --color-warn-A700-contrast: #{light.$warn-A700-contrast};
 
   @media screen and (prefers-color-scheme: dark) {
-    --color-bg: #{colors.$background-dark};
-    --color-fg: #{colors.$foreground-dark};
-    --color-divider: #{colors.$divider-dark};
-    --color-primary: #{colors.$primary-dark};
-    --color-primary-contrast: #{colors.$primary-dark-contrast};
-    --color-accent: #{colors.$accent-dark};
-    --color-accent-contrast: #{colors.$accent-dark-contrast};
-    --color-warn: #{colors.$warn-dark};
-    --color-warn-contrast: #{colors.$warn-dark-contrast};
+    // Theme colors: good for most things
+
+    --theme-bg: #{dark.$background};
+    --theme-fg: #{dark.$foreground};
+    --theme-divider: #{dark.$divider};
+
+    --theme-primary-default: #{dark.$primary-default};
+    --theme-primary-default-contrast: #{dark.$primary-default-contrast};
+
+    --theme-primary-light: #{dark.$primary-default};
+    --theme-primary-light-contrast: #{dark.$primary-light-contrast};
+
+    --theme-primary-dark: #{dark.$primary-dark};
+    --theme-primary-dark-contrast: #{dark.$primary-dark-contrast};
+
+    --theme-accent-default: #{dark.$accent-default};
+    --theme-accent-default-contrast: #{dark.$accent-default-contrast};
+
+    --theme-accent-light: #{dark.$accent-light};
+    --theme-accent-light-contrast: #{dark.$accent-light-contrast};
+
+    --theme-accent-dark: #{dark.$accent-dark};
+    --theme-accent-dark-contrast: #{dark.$accent-dark-contrast};
+
+    --theme-warn-default: #{dark.$warn-default};
+    --theme-warn-default-contrast: #{dark.$warn-default-contrast};
+
+    --theme-warn-light: #{dark.$warn-light};
+    --theme-warn-light-contrast: #{dark.$warn-light-contrast};
+
+    --theme-warn-dark: #{dark.$warn-dark};
+    --theme-warn-dark-contrast: #{dark.$warn-dark-contrast};
+
+    // Color primatives: when more nuance is needed
+
+    --color-primary-50: #{dark.$primary-50};
+    --color-primary-100: #{dark.$primary-100};
+    --color-primary-200: #{dark.$primary-200};
+    --color-primary-300: #{dark.$primary-300};
+    --color-primary-400: #{dark.$primary-400};
+    --color-primary-500: #{dark.$primary-500};
+    --color-primary-600: #{dark.$primary-600};
+    --color-primary-700: #{dark.$primary-700};
+    --color-primary-800: #{dark.$primary-800};
+    --color-primary-900: #{dark.$primary-900};
+    --color-primary-A100: #{dark.$primary-A100};
+    --color-primary-A200: #{dark.$primary-A200};
+    --color-primary-A400: #{dark.$primary-A400};
+    --color-primary-A700: #{dark.$primary-A700};
+
+    --color-primary-50-contrast: #{dark.$primary-50-contrast};
+    --color-primary-100-contrast: #{dark.$primary-100-contrast};
+    --color-primary-200-contrast: #{dark.$primary-200-contrast};
+    --color-primary-300-contrast: #{dark.$primary-300-contrast};
+    --color-primary-400-contrast: #{dark.$primary-400-contrast};
+    --color-primary-500-contrast: #{dark.$primary-500-contrast};
+    --color-primary-600-contrast: #{dark.$primary-600-contrast};
+    --color-primary-700-contrast: #{dark.$primary-700-contrast};
+    --color-primary-800-contrast: #{dark.$primary-800-contrast};
+    --color-primary-900-contrast: #{dark.$primary-900-contrast};
+    --color-primary-A100-contrast: #{dark.$primary-A100-contrast};
+    --color-primary-A200-contrast: #{dark.$primary-A200-contrast};
+    --color-primary-A400-contrast: #{dark.$primary-A400-contrast};
+    --color-primary-A700-contrast: #{dark.$primary-A700-contrast};
+
+    --color-accent-50: #{dark.$accent-50};
+    --color-accent-100: #{dark.$accent-100};
+    --color-accent-200: #{dark.$accent-200};
+    --color-accent-300: #{dark.$accent-300};
+    --color-accent-400: #{dark.$accent-400};
+    --color-accent-500: #{dark.$accent-500};
+    --color-accent-600: #{dark.$accent-600};
+    --color-accent-700: #{dark.$accent-700};
+    --color-accent-800: #{dark.$accent-800};
+    --color-accent-900: #{dark.$accent-900};
+    --color-accent-A100: #{dark.$accent-A100};
+    --color-accent-A200: #{dark.$accent-A200};
+    --color-accent-A400: #{dark.$accent-A400};
+    --color-accent-A700: #{dark.$accent-A700};
+
+    --color-accent-50-contrast: #{dark.$accent-50-contrast};
+    --color-accent-100-contrast: #{dark.$accent-100-contrast};
+    --color-accent-200-contrast: #{dark.$accent-200-contrast};
+    --color-accent-300-contrast: #{dark.$accent-300-contrast};
+    --color-accent-400-contrast: #{dark.$accent-400-contrast};
+    --color-accent-500-contrast: #{dark.$accent-500-contrast};
+    --color-accent-600-contrast: #{dark.$accent-600-contrast};
+    --color-accent-700-contrast: #{dark.$accent-700-contrast};
+    --color-accent-800-contrast: #{dark.$accent-800-contrast};
+    --color-accent-900-contrast: #{dark.$accent-900-contrast};
+    --color-accent-A100-contrast: #{dark.$accent-A100-contrast};
+    --color-accent-A200-contrast: #{dark.$accent-A200-contrast};
+    --color-accent-A400-contrast: #{dark.$accent-A400-contrast};
+    --color-accent-A700-contrast: #{dark.$accent-A700-contrast};
+
+    --color-warn-50: #{dark.$warn-50};
+    --color-warn-100: #{dark.$warn-100};
+    --color-warn-200: #{dark.$warn-200};
+    --color-warn-300: #{dark.$warn-300};
+    --color-warn-400: #{dark.$warn-400};
+    --color-warn-500: #{dark.$warn-500};
+    --color-warn-600: #{dark.$warn-600};
+    --color-warn-700: #{dark.$warn-700};
+    --color-warn-800: #{dark.$warn-800};
+    --color-warn-900: #{dark.$warn-900};
+    --color-warn-A100: #{dark.$warn-A100};
+    --color-warn-A200: #{dark.$warn-A200};
+    --color-warn-A400: #{dark.$warn-A400};
+    --color-warn-A700: #{dark.$warn-A700};
+
+    --color-warn-50-contrast: #{dark.$warn-50-contrast};
+    --color-warn-100-contrast: #{dark.$warn-100-contrast};
+    --color-warn-200-contrast: #{dark.$warn-200-contrast};
+    --color-warn-300-contrast: #{dark.$warn-300-contrast};
+    --color-warn-400-contrast: #{dark.$warn-400-contrast};
+    --color-warn-500-contrast: #{dark.$warn-500-contrast};
+    --color-warn-600-contrast: #{dark.$warn-600-contrast};
+    --color-warn-700-contrast: #{dark.$warn-700-contrast};
+    --color-warn-800-contrast: #{dark.$warn-800-contrast};
+    --color-warn-900-contrast: #{dark.$warn-900-contrast};
+    --color-warn-A100-contrast: #{dark.$warn-A100-contrast};
+    --color-warn-A200-contrast: #{dark.$warn-A200-contrast};
+    --color-warn-A400-contrast: #{dark.$warn-A400-contrast};
+    --color-warn-A700-contrast: #{dark.$warn-A700-contrast};
   }
 }

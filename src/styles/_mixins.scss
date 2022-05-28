@@ -1,5 +1,10 @@
-// Values from node_modules/@angular/material/toolbar/_toolbar-variables.scss
+/**
+  Get the current height of the `<mat-toolbar>` element.
+  Useful when using `position: fixed;` so you can add enough top padding
+  to your content containers.
+ */
 @mixin mat-toolbar-height {
+  // Values taken from node_modules/@angular/material/toolbar/_toolbar-variables.scss
   $height-desktop: 64px;
   $height-mobile: 56px;
   $mobile-breakpoint: "max-width: 599px";

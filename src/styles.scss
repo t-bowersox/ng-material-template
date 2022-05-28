@@ -1,27 +1,21 @@
-@use "variables" as vars;
-@use "theme";
+// To customize your theme, modify styles/_preferences.scss.
+// See styles/_mixins.scss for useful mixins (and add your own!).
 
-* {
-  box-sizing: border-box;
-}
+@use "styles/theme/reset"; // CSS reset by Josh W. Comeau
+@use "styles/theme/material"; // Angular Material custom theme
+@use "styles/variables"; // CSS custom properties from theme preferences
 
 html,
 body {
-  height: 100%;
-  margin: 0;
-  background-color: var(--color-bg);
-  color: var(--color-fg);
+  background-color: var(--theme-bg);
+  color: var(--theme-fg);
 }
 
 hr {
-  border: 1px solid var(--color-divider);
+  border: 1px solid var(--theme-divider);
   margin: 1rem 0;
 }
 
 a {
-  color: var(--color-primary);
-}
-
-app-root {
-  isolation: isolate;
+  color: var(--theme-primary-default);
 }

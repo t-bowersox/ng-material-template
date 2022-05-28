@@ -1,0 +1,60 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use "@angular/material" as mat;
+@use "typography" as type;
+@use "light";
+@use "dark";
+
+// Include the common styles & typography for Angular Material.
+// Be sure that you only ever include this mixin once!
+@include mat.core(type.$app-typography);
+
+/*
+  Configure the light theme
+ */
+
+// Define the palettes for your light theme.
+$app-primary-light: light.$palette-primary;
+$app-accent-light: light.$palette-accent;
+
+// The warn palette is optional (defaults to red).
+$app-warn-light: light.$palette-warn;
+
+// Create the light theme object.
+$app-theme-light: mat.define-light-theme(
+  (
+    color: (
+      primary: $app-primary-light,
+      accent: $app-accent-light,
+      warn: $app-warn-light,
+    ),
+  )
+);
+
+// Include light theme styles for core and each component used in your app.
+@include mat.all-component-themes($app-theme-light);
+
+/*
+  Configure the dark theme.
+ */
+
+@media screen and (prefers-color-scheme: dark) {
+  // Define the palettes for your dark theme.
+  $app-primary-dark: dark.$palette-primary;
+  $app-accent-dark: dark.$palette-accent;
+  $app-warn-dark: dark.$palette-warn;
+
+  // Create the dark theme object.
+  $app-theme-dark: mat.define-dark-theme(
+    (
+      color: (
+        primary: $app-primary-dark,
+        accent: $app-accent-dark,
+        warn: $app-warn-dark,
+      ),
+    )
+  );
+
+  // Override theme colors for core and each component used in your app.
+  @include mat.all-component-colors($app-theme-dark);
+}
