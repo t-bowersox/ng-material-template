@@ -1,7 +1,7 @@
 @use "colors";
 
 :root {
-  color-scheme: light;
+  color-scheme: light dark;
 
   --color-bg: #{colors.$background-light};
   --color-fg: #{colors.$foreground-light};
@@ -14,8 +14,6 @@
   --color-warn-contrast: #{colors.$warn-dark-contrast};
 
   @media screen and (prefers-color-scheme: dark) {
-    color-scheme: dark;
-
     --color-bg: #{colors.$background-dark};
     --color-fg: #{colors.$foreground-dark};
     --color-divider: #{colors.$divider-dark};
