@@ -3,15 +3,15 @@
   Useful when using `position: fixed;` so you can add enough top padding
   to your content containers.
  */
-@mixin mat-toolbar-height {
+@mixin mat-toolbar-top-padding($extraPx: 0px) {
   // Values taken from node_modules/@angular/material/toolbar/_toolbar-variables.scss
   $height-desktop: 64px;
   $height-mobile: 56px;
   $mobile-breakpoint: "max-width: 599px";
 
-  padding-top: $height-desktop;
+  padding-top: $height-desktop + $extraPx;
 
   @media ($mobile-breakpoint) {
-    padding-top: $height-mobile;
+    padding-top: $height-mobile + $extraPx;
   }
 }
