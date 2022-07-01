@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "@angular/material": "^13.3.8"
+    "@angular/material": "^14.0.4"
   },
   "devDependencies": {
     "prettier": "^2.6.2"
