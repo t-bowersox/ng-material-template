@@ -4,11 +4,13 @@ The purpose of this repo is to help you get up and running with a customized Ang
 
 - Provides out-of-the-box light and dark themes set by `preferred-color-scheme` media queries. Uses Angular Material's own light and dark palettes for foreground, background, and divider colors, providing consistency with Angular Material components.
 - Choose the primary, accent, and warn palettes you want to use, along with their hues to get a theme tailored to your color choices.
-- Choose the font families to use for your theme's typography. 
+- Choose the font families to use for your theme's typography.
 - Palettes are not only applied to Angular Material components, but are also exposed in CSS custom properties for you to use throughout your project's styles.
 - Core stylesheet built upon [Josh W. Comeau's fantastic modern CSS reset](https://www.joshwcomeau.com/css/custom-css-reset), adapted for an Angular app.
 
 ## Usage
+
+This should work with Angular Material 13.x and 14.x.
 
 ### Set up
 
@@ -30,9 +32,11 @@ Open `src/styles/_preferences.scss` and follow the steps in the comments to:
 
 1. Define your [Angular Material palettes](https://material.angular.io/guide/theming#predefined-palettes): primary, accent, and warn.
 2. Define the hues for each palette's light and dark themes.
-  - Each palette has a default, light, and dark hue. These are used to style different aspects of Angular material components.
-  - This may take some trial and error to find the best combinations for your chosen palettes, though the defaults should be a good start.
-  - Please be sure to test for accessible color contrast, too! (Strive for a WCAG 2.0 AA ratio.)
+
+- Each palette has a default, light, and dark hue. These are used to style different aspects of Angular material components.
+- This may take some trial and error to find the best combinations for your chosen palettes, though the defaults should be a good start.
+- Please be sure to test for accessible color contrast, too! (Strive for a WCAG 2.0 AA ratio.)
+
 3. Define the font families you want to use in your theme's [typography](https://material.angular.io/guide/typography).
 
 The theme system will take care of the rest!
@@ -52,11 +56,11 @@ Ideally the `src/styles` directory should be added to the [`stylePreprocessorOpt
 In your component styles, this allows you to include the modules in that directory by name only -- no need to provide relative paths!
 
 ```scss
-@use 'mixins';
+@use "mixins";
 
 // vs.
 
-@use '../../styles/mixins';
+@use "../../styles/mixins";
 ```
 
 ### What's included
